@@ -27,21 +27,21 @@
             <a href="javascript:;" onclick="jQuery('#add_menu').modal('show', {backdrop: 'fade'});" class="btn btn-turquoise">Add Menu</a>
         </div>
         <div class="panel-body">
-            <table id="menu_datatable" class="display compact hover row-border responsive no-wrap" style="width:100%">
-                <thead>
+            <table id="menu_datatable" class="table table-striped  table-responsive" cellspacing="0" width="100%">
+                <thead style="background-color: #2c2e2f; color: white">
                 <tr>
                     <th hidden="true">Id</th>
-                    <th>Title</th>
-                    <th>Url</th>
-                    <th>Parent Menu</th>
-                    <th>Action</th>
+                    <th style="color: white; vertical-align: text-top;text-align: left ">Title</th>
+                    <th style="color: white; vertical-align: text-top;text-align: left ">Url</th>
+                    <th style="color: white; vertical-align: text-top;text-align: left ">Parent Menu</th>
+                    <th style="color: white; vertical-align: text-top;text-align: left ">Action</th>
                 </tr>
                 </thead>
                 <tbody>
                 @foreach($menu_list->get() as $menu)
                 <tr>
                     <td hidden="true">{{ $menu->id }}</td>
-                    <td style="{{ !$menu->parent_menu ? 'border-left:4px solid #e67e22' : '' }};">{{ $menu->title }}</td>
+                    <td style="{{ !$menu->parent_menu ? 'border-left:4px solid #e67e22' : '' }}; tex">{{ $menu->title }}</td>
                     <td>{{ $menu->menu_url ? $menu->menu_url : 'N/A' }}</td>
                     <td>{{ $menu->parent_menu ? $menu->main_menu->title : 'N/A' }}</td>
                     <td><a href="javascript:;" onclick="jQuery('#update_menu_{{ $menu->id }}').modal('show', {backdrop: 'fade'});" class="btn btn-blue btn-sm btn-icon">Edit</a> <a href="javascript:;" class="btn btn-red btn-sm btn-icon" onclick="$(this).find('#del_form').submit();">Delete <form id="del_form" action="{{ url('menu/'.$menu->id) }}" method="POST" onsubmit="return confirm_menu_delete()">@method('DELETE')

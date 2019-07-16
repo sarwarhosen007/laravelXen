@@ -23,7 +23,7 @@ Route::group(['middleware'=> 'auth'], function(){
 	// User
     Route::resource('/user','UserController');
 
-
 	//Logout User
 	Route::get('/logout', 'Auth\LoginController@logout');
+
 });

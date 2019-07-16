@@ -20,10 +20,9 @@
     <link rel="stylesheet" href="{{ asset('assets/css/xenon-skins.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/js/multiselect/css/multi-select.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/custom.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/js/datatables/dataTables.bootstrap.css') }}">
 
-    <!--  Datatable -->
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css">
+    <link rel="stylesheet" href="{{ asset('assets/js/icheck/skins/all.css') }} ">
 
     <script src="{{ asset('assets/js/jquery-1.11.1.min.js') }}"></script>
     <style media="screen">
@@ -202,6 +201,7 @@
     <script src="{{ asset('assets/js/joinable.js') }}"></script>
     <script src="{{ asset('assets/js/xenon-api.js') }}"></script>
     <script src="{{ asset('assets/js/xenon-toggles.js') }}"></script>
+    <script src="{{ asset('assets/js/datatables/js/jquery.dataTables.min.js') }}"></script>
 
 
     <!-- Imported scripts on this page -->
@@ -212,12 +212,17 @@
     <script src="{{ asset('assets/js/jquery-validate/jquery.validate.min.js') }}"></script>
     <script src="{{ asset('assets/js/multiselect/js/jquery.multi-select.js') }}"></script>
 
-    <!-- Datatable -->
-    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
-
-
     <!-- JavaScripts initializations and stuff -->
     <script src="{{ asset('assets/js/xenon-custom.js') }}"></script>
+
+
+    {{--<script src="{{ asset('assets/js/datatables/dataTables.bootstrap.css') }}"></script>--}}
+    <script src="{{ asset('assets/js/jquery-ui/jquery-ui.min.js') }}"></script>
+    <script src="{{ asset('assets/js/formwizard/jquery.bootstrap.wizard.min.js') }}"></script>
+    <script src="{{ asset('assets/js/datatables/dataTables.bootstrap.js') }}"></script>
+    <script src="{{ asset('assets/js/datatables/yadcf/jquery.dataTables.yadcf.js') }}"></script>
+    <script src="{{ asset('assets/js/datatables/tabletools/dataTables.tableTools.min.js') }}"></script>
+    <script src="{{ asset('assets/js/rwd-table/js/rwd-table.min.js') }}"></script>
 
     @yield('scripts')
 </body>

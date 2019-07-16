@@ -29,16 +29,16 @@
             <a href="{{ url('/role/add_role') }}" class="btn btn-turquoise">Add User</a>
         </div>
         <div class="panel-body">
-            <table id="users_datatable" class="display compact hover row-border responsive no-wrap" style="width:100%">
-                <thead>
+            <table id="users_datatable" class="table table-striped  table-responsive" cellspacing="0" width="100%" >
+                <thead style="background-color: #2c2e2f; color: white">
                 <tr>
                     <th hidden="true">Id</th>
-                    <th>Name</th>
-                    <th>Username</th>
-                    <th>Email</th>
-                    <th>Created At</th>
-                    <th>Status</th>
-                    <th>Action</th>
+                    <th style="color: white; vertical-align: text-top;text-align: center ">Name</th>
+                    <th style="color: white; vertical-align: text-top;text-align: center ">Username</th>
+                    <th style="color: white; vertical-align: text-top;text-align: center ">Email</th>
+                    <th style="color: white; vertical-align: text-top;text-align: center ">Created At</th>
+                    <th style="color: white; vertical-align: text-top;text-align: center ">Status</th>
+                    <th style="color: white; vertical-align: text-top;text-align: center ">Action</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -58,7 +58,10 @@
         $(document).ready(function() {
             $('#users_datatable').DataTable({
                 responsive: true,
-                "order": [[ 0, "desc" ]]
+                "order": [[ 0, "desc" ]],
+                aLengthMenu: [
+                    [10, 25, 50, 100, -1], [10, 25, 50, 100, "All"]
+                ]
             });
         } );
         function confirm_role_delete() {
