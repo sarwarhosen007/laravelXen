@@ -23,7 +23,7 @@ class UserController extends Controller
     public function loadUserList(Request $request)
     {
         $role_id = $request->roleId;
-        $user_list = User::with()->where('is_superuser',0);
+        $user_list = User::all()->where('is_superuser',0);
 
         if(!empty($role_id)) {
             $user_list = $user_list->where('role_id',$role_id);
@@ -44,6 +44,11 @@ class UserController extends Controller
             $index++;
         }
         return json_encode(array('data'=>$data));
+    }
+
+    public function create()
+    {
+        return view('users.create_user');
     }
 
 

@@ -21,8 +21,11 @@ class Helpers
     }
 
     public static function is_current_route($path,$route){
+
         $current_menu_level = explode('/',$path);
-        return '/'.$current_menu_level[0] == $route ? 'class=active':'';
+        $current_route = explode('/',$route);
+        return $current_route[0];
+        return '/'.$current_menu_level[0] == $current_route[0] ? 'class=active':'';
     }
 
 
