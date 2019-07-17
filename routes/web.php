@@ -17,10 +17,11 @@ Route::group(['middleware'=> 'auth'], function(){
 	Route::post('/role/{role}/update_role_menu', 'RoleController@update_role_menu');
 	Route::post('/role/{role}/update_role_permission', 'RoleController@update_role_permission');
 
-	//Role
+	//Permission
 	Route::resource('/permission', 'PermissionController');
 
 	// User
+    Route::get('/load-user','UserController@loadUserList')->name('user.loadUser');
     Route::resource('/user','UserController');
 
 	//Logout User

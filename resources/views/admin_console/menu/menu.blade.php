@@ -131,7 +131,7 @@
                             <label for="parent_menu">Parent Menu</label>
                             <select name="parent_menu" id="parent_menu" class="form-control">
                                 <option value="">Select Parent Menu</option>
-                                @foreach($menu_list as $menu)
+                                @foreach($menu_list->get() as $menu)
                                     <option value="{{ $menu->id }}">{{ $menu->title }}</option>
                                 @endforeach
                             </select>
